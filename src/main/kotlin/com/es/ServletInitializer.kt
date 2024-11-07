@@ -1,4 +1,4 @@
-package com.es.libreria
+package com.es
 
 import org.springframework.boot.builder.SpringApplicationBuilder
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer

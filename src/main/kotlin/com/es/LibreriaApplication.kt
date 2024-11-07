@@ -1,4 +1,4 @@
-package com.es.libreria
+package com.es
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -6,6 +6,6 @@ import org.springframework.boot.runApplication
 @SpringBootApplication
 class LibreriaApplication
 
-fun main(args: Array<String>) {
-	runApplication<LibreriaApplication>(*args)
+fun main() {
+	runApplication<LibreriaApplication>()
 }
