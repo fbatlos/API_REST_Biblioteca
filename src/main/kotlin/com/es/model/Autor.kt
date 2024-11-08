@@ -10,7 +10,7 @@ import java.time.LocalDate
 data class Autor(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
+    val id: Long? = null,
 
     @Column(nullable = false)
     var nombre: String,
@@ -24,5 +24,7 @@ data class Autor(
 
     @OneToMany(mappedBy = "autor", cascade = [jakarta.persistence.CascadeType.ALL], orphanRemoval = true)
     @JsonManagedReference
-    val libros: MutableList<Libro> = mutableListOf()
+    var libros: MutableList<Libro> = mutableListOf()
+
+
 )

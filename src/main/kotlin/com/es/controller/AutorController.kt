@@ -3,10 +3,7 @@
 import com.es.model.Autor
 import com.es.services.AutorService
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/autores")
@@ -18,6 +15,15 @@ class AutorController {
      */
     @Autowired
     private lateinit var autorService: AutorService
+
+    @PostMapping("/")
+    fun insertAutor(
+        @RequestBody autor: Autor
+    ): Autor? {
+        return autorService.insertAutor(autor)
+    }
+
+
 
     @GetMapping("/{id}")
     fun getById(

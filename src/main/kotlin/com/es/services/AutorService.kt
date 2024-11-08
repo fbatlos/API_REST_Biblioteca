@@ -16,6 +16,17 @@ class AutorService {
 
      */
 
+    fun insertAutor(autor: Autor): Autor? {
+        //Recorrer para ver
+        val autorConLibro = autor.libros
+        autorConLibro.forEach { it.autor = autor }
+        autor.libros = autorConLibro
+        autorRepository.save(autor)
+
+        return autor
+
+    }
+
 
     fun getById(id:String) : Autor?{
 
