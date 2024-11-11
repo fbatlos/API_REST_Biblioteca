@@ -22,7 +22,7 @@ data class Autor(
     @Column(length = 1000)
     var biografia: String? = null,
 
-    @OneToMany(mappedBy = "autor", cascade = [jakarta.persistence.CascadeType.ALL], orphanRemoval = true)
+    @OneToMany(mappedBy = "autor", cascade = [CascadeType.ALL], orphanRemoval = false)
     @JsonManagedReference
     var libros: MutableList<Libro> = mutableListOf()
 
